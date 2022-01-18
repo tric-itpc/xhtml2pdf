@@ -350,7 +350,7 @@ class PmlImageReader(object):  # TODO We need a factory here, returning either a
                     from reportlab.pdfbase.pdfutils import readJPEGInfo
 
                     try:
-                        self._width, self._height, c = readJPEGInfo(self.fp)
+                        self._width, self._height, *_ = readJPEGInfo(self.fp)
                     except:
                         raise RuntimeError('Imaging Library not available, unable to import bitmaps only jpegs')
                     self.jpeg_fh = self._jpeg_fh
